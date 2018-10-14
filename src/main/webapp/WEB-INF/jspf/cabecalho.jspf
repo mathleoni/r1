@@ -21,10 +21,6 @@
                     <a class="nav-link" href="eventos.html?usuario=${usuario}">Gerenciar Eventos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Sobre</a>
-                </li>
-
-                <li class="nav-item">
                     <a class="nav-link" href="index.html">Sair</a>
                 </li>
 

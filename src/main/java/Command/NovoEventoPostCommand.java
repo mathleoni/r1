@@ -20,7 +20,7 @@ public class NovoEventoPostCommand implements Comando {
     @Override
     public void exec(HttpServletRequest request, HttpServletResponse response) {
         String titulo = request.getParameter("titulo");
-        Double minimo = Double.parseDouble(request.getParameter("minimo"));
+        Double minimo = Double.parseDouble(request.getParameter("minimo").replace(",", "."));
         String dtsorteio = request.getParameter("sorteio");
         String dtevento = request.getParameter("evento");
         Integer IDcriador = Integer.parseInt(request.getParameter("usuario"));

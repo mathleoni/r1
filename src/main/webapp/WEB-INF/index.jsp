@@ -3,7 +3,7 @@
             var eventos = <%=request.getAttribute("eventos")%>;
             var usuario = <%=request.getAttribute("usuario")%>;
         </script>
-        <script src="js/Cards.js"></script>
+        <script charset="UTF-8" src="js/Cards.js"></script>
         <title>Amigo Oculto - DCC192</title>
     </head>
 

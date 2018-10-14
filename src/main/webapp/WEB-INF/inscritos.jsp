@@ -4,7 +4,7 @@
 
 <body>
 
-    
+
     <br/>
     <h3 class="text-center">Lista de Participantes do Evento: ${evento.titulo}</h3>
     <br/>
@@ -25,5 +25,9 @@
         </tbody>
 
     </table>
-
+    <c:if test="${param.sucesso == true}">
+        <div class="alert alert-success" role="alert">
+            <center>Participantes adicionados com sucesso!</center>
+        </div>
+    </c:if>
     <%@include file="/WEB-INF/jspf/rodape.jspf" %>
