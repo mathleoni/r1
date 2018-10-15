@@ -19,14 +19,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author marit
  */
 public class CadastroTest {
-    
+
     private static WebDriver driver;
     
     private static String url = "http://localhost:8080/MinicursoSelenium/registro.html";
    
     @BeforeClass
     public static void configura() {
-        System.setProperty("webdriver.gecko.driver", "/home/joao/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "");
         driver = new FirefoxDriver();
         driver.get(url);
     }
@@ -41,4 +41,5 @@ public class CadastroTest {
         assertTrue(achouProjeto);
         
     }
+
 }

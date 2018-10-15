@@ -18,7 +18,7 @@ public class Conexao {
             } catch (ClassNotFoundException ex) {
                 Logger.getLogger(Conexao.class.getName()).log(Level.SEVERE, null, ex);
             }
-            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/amigooculto", "postgres", "12345");
+            conexao = DriverManager.getConnection("jdbc:postgresql://localhost:5432/amigooculto", "semana", "semana");
         }
         return conexao;
     }

@@ -19,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
  * @author marit
  */
 public class Cadastro {
-    private WebDriver driver;
+ private WebDriver driver;
     
     @FindBy(name = "nome")
     private WebElement nome;
@@ -39,4 +39,5 @@ public class Cadastro {
         PageFactory.initElements(driver,this);
         return this;
     }
+
 }
