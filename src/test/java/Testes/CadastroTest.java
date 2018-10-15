@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 /**
  *
  * @author marit
- */
+ 
 public class CadastroTest {
 
     private static WebDriver driver;
@@ -43,3 +43,4 @@ public class CadastroTest {
     }
 
 }
+*/
