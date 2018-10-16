@@ -8,6 +8,40 @@
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
+<tr><td rowspan="1" colspan="3">Cadastro e Login</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>http://localhost:8080/MinicursoSelenium/index.html<datalist><option>http://localhost:8080/MinicursoSelenium/index.html</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>link=Cadastre-se agora<datalist><option>link=Cadastre-se agora</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Não possui cadastro?'])[1]/following::a[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Esqueci minha senha'])[1]/following::a[1]</option><option>//a[contains(text(),'Cadastre-se agora')]</option><option>//a[contains(@href, 'registro.html')]</option><option>//center[3]/a</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>name=nome<datalist><option>name=nome</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nome Completo:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Insira abaixo os dados solicitados para a sua inscrição'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha:'])[1]/preceding::input[2]</option><option>//input[@name='nome']</option><option>//input</option><option>css=input[name="nome"]</option></datalist></td><td></td>
+</tr>
+<tr><td>store</td><td>Participante 1<datalist><option>Participante 1</option></datalist></td><td>participante</td>
+</tr>
+<tr><td>store</td><td>participante1@gmail.com<datalist><option>Participante 1</option><option>participante1@gmail.com</option></datalist></td><td>email</td>
+</tr>
+<tr><td>store</td><td>12345<datalist><option>Participante 1</option><option>12345</option></datalist></td><td>senha</td>
+</tr>
+<tr><td>type</td><td>name=nome<datalist><option>name=nome</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nome Completo:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Insira abaixo os dados solicitados para a sua inscrição'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail:'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha:'])[1]/preceding::input[2]</option><option>//input[@name='nome']</option><option>//input</option><option>css=input[name="nome"]</option></datalist></td><td>${participante}</td>
+</tr>
+<tr><td>type</td><td>name=email<datalist><option>name=email</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Nome Completo:'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha:'])[1]/preceding::input[1]</option><option>//input[@name='email']</option><option>//div[2]/input</option><option>css=input[name="email"]</option></datalist></td><td>${email}</td>
+</tr>
+<tr><td>type</td><td>name=senha<datalist><option>name=senha</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail:'])[1]/following::input[2]</option><option>//input[@name='senha']</option><option>//div[3]/input</option><option>css=input[name="senha"]</option></datalist></td><td>${senha}</td>
+</tr>
+<tr><td>sendKeys</td><td>name=senha<datalist><option>name=senha</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha:'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail:'])[1]/following::input[2]</option><option>//input[@name='senha']</option><option>//div[3]/input</option><option>css=input[name="senha"]</option></datalist></td><td>${KEY_ENTER}</td>
+</tr>
+<tr><td>click</td><td>id=userLogin<datalist><option>id=userLogin</option><option>name=usuario</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Esqueci minha senha'])[1]/preceding::input[2]</option><option>//input[@id='userLogin']</option><option>//input</option><option>css=#userLogin</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=userLogin<datalist><option>id=userLogin</option><option>name=usuario</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Esqueci minha senha'])[1]/preceding::input[2]</option><option>//input[@id='userLogin']</option><option>//input</option><option>css=#userLogin</option></datalist></td><td>${email}</td>
+</tr>
+<tr><td>type</td><td>id=userPassword<datalist><option>id=userPassword</option><option>name=senha</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Esqueci minha senha'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Não possui cadastro?'])[1]/preceding::input[2]</option><option>//input[@id='userPassword']</option><option>//div[2]/input</option><option>css=#userPassword</option></datalist></td><td>${senha}</td>
+</tr>
+<tr><td>sendKeys</td><td>id=userPassword<datalist><option>id=userPassword</option><option>name=senha</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Senha'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='E-mail'])[1]/following::input[2]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Esqueci minha senha'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Não possui cadastro?'])[1]/preceding::input[2]</option><option>//input[@id='userPassword']</option><option>//div[2]/input</option><option>css=#userPassword</option></datalist></td><td>${KEY_ENTER}</td>
+</tr>
+</tbody></table>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
 <tr><td rowspan="1" colspan="3">Cadastro de Evento</td></tr>
 </thead>
 <tbody>

@@ -23,10 +23,14 @@ public class RegistroPostCommand implements Comando {
         try {
             dao.adicionar(participante);
            response.sendRedirect("index.html?sucesso=true");
-        } catch (SQLException ex) {
-            Logger.getLogger(NovoEventoPostCommand.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
+        } catch (SQLException| IOException ex) {
              Logger.getLogger(RegistroPostCommand.class.getName()).log(Level.SEVERE, null, ex);
+         } catch( IllegalArgumentException ex){
+            try {
+                response.sendRedirect("registro.html?sucesso=false");
+            } catch (IOException ex1) {
+                Logger.getLogger(RegistroPostCommand.class.getName()).log(Level.SEVERE, null, ex1);
+            }
          }
     }
     

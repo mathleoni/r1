@@ -29,6 +29,11 @@
                     <input type="submit" class="btn btn-success"/>
                     <input type="reset" class="btn btn-danger"/>
                 </form>
+                 <c:if test="${param.sucesso == false}">
+                        <div class="alert alert-danger" role="alert">
+                            <center>E-mail já cadastrado. Realize o login ou escolha outro para cadastrar!</center>
+                        </div>
+                    </c:if>
             </div>
             <div class="col"></div>
         </div>

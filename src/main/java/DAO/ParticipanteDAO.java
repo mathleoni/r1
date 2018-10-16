@@ -44,7 +44,10 @@ public class ParticipanteDAO {
         return participantes;
     }
 
-    public void adicionar(Participante participante) throws SQLException {
+    public void adicionar(Participante participante) throws SQLException, IllegalArgumentException {
+        if (jaCadastrado(participante.getEmail()) == true) {
+            throw new IllegalArgumentException();
+        }
         String sql = "INSERT INTO PARTICIPANTE(nome, email,senha) VALUES(?,?,?)";
         try (PreparedStatement comando = conexao.prepareStatement(sql)) {
             comando.setString(1, participante.getNome());
@@ -143,8 +146,8 @@ public class ParticipanteDAO {
         }
         return total;
     }
-    
-    public Participante getAmigoOculto(Integer idEvento, Integer idParticipante) throws SQLException{
+
+    public Participante getAmigoOculto(Integer idEvento, Integer idParticipante) throws SQLException {
         Participante participante;
         String sql = "SELECT codamigo FROM PARTICIPANTE INNER JOIN EVENTO_PARTICIPANTE ON CODIGO = CODPARTICIPANTE WHERE CODEVENTO = ? AND CODPARTICIPANTE = ?";
         try (PreparedStatement consulta = conexao.prepareStatement(sql)) {
@@ -155,6 +158,15 @@ public class ParticipanteDAO {
             participante = this.listbyID(resultado.getInt("codamigo"));
         }
         return participante;
-    
+
+    }
+
+    private boolean jaCadastrado(String email) throws SQLException {
+        String sql = "SELECT FROM PARTICIPANTE WHERE EMAIL = ?";
+        try (PreparedStatement consulta = conexao.prepareStatement(sql)) {
+            consulta.setString(1, email);
+            ResultSet resultado = consulta.executeQuery();
+            return resultado.next();
+        }
     }
 }
