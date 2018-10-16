@@ -28,13 +28,13 @@ public class Teste {
    
     @BeforeClass
     public static void configura() {
-        System.setProperty("webdriver.gecko.driver", "/home/joao/geckodriver");
+        System.setProperty("webdriver.gecko.driver", "/home/semana/Downloads/geckodriver");
         driver = new FirefoxDriver();
         driver.get(url);
     }
     
     @Test
-    public void testCadastroValido(){
+    public void test(){
         driver.navigate().to(url);
         
         WebElement pesquisa = driver.findElement(By.name("q"));
