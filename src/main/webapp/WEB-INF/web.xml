@@ -4,10 +4,6 @@
         <servlet-name>EventoServlet</servlet-name>
         <servlet-class>Servlet.EventoServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>NewServlet</servlet-name>
-        <servlet-class>Servlet.NewServlet</servlet-class>
-    </servlet>
     <servlet-mapping>
         <servlet-name>EventoServlet</servlet-name>
         <url-pattern>/index.html</url-pattern>
